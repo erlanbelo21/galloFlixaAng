@@ -31,9 +31,11 @@ movieDetails(data:any):Observable<any>{
   movieCasts(data: any): Observable<any> {
     return this.http.get(`${this.baseUrl}/movie/${data}/Casts?api_key=${this.apiKey}&language=pt-BR`);
   }
+  // search Movie API Data
   searchMovie(data:any):Observable<any>{
     return this.http.get(`${this.baseUrl}/search/movie?api_key=${this.apiKey}&query=${data.movieName}&language=pt-BR`);
   }
+  
     // Action Movies
     fetchActionMovies():Observable<any> {
       return this.http.get(`${this.baseUrl}/discover/movie?api_key=${this.apiKey}&with_genres=28&language=pt-BR`);

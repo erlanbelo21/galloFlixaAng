@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MovieApiService } from 'src/app/services/movie-api.service';
+
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
