@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 export class MovieApiService {
   constructor(private http:HttpClient) { }
   baseUrl = "https://api.themoviedb.org/3";
-  apiKey = "4bce308009138c11bd5ec15086f68483";
+  apiKey = "626a725174aa33ca2b571cba06d774e9";
 
   //banner API Data
   bannerApiData(): Observable<any>
