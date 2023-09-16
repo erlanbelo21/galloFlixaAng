@@ -11,11 +11,12 @@ export class SearchComponent {
 
   constructor(private service:MovieApiService) { }
 
-  searchResult: any;
+
   searchForm = new FormGroup({
     'movieName': new FormControl(null)
   });
-
+  searchResult: any;
+  
   submitForm(){
     console.log(this.searchForm.value, 'searchForm#');
     this.service.searchMovie(this.searchForm.value).subscribe((result)=>{
@@ -23,6 +24,8 @@ export class SearchComponent {
       this.searchResult = result.results;
     });
   }
- 
+
+
+
 
 }

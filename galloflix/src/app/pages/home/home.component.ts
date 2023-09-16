@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { subscribeOn } from 'rxjs';
 import { MovieApiService } from 'src/app/services/movie-api.service';
 
 @Component({
@@ -7,21 +8,34 @@ import { MovieApiService } from 'src/app/services/movie-api.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  comedyMovieResult: any;
-  thrillerMovieResult: any;
-  actionMovieResult: any;
+
 
   constructor(private service:MovieApiService) { }
 
-
+  movieResult:any=[];
   bannerResult: any=[];
   trendingMovieResult: any=[];
+  actionMovieResult:any=[];
+  adventureMovieResult:any=[];
+  animationMovieResult:any=[];
+  comedyMovieResult:any=[]
+  documentaryMovieResult:any=[];
+  scienceFictionMovieResult:any=[];
+  thrillerMovieResult:any=[];
+
 
   ngOnInit(): void {
     this.bannerData();
     this.trendingData();
-
+    this.actionMovieData();
+    this.adventureMovieData();
+    this.animationMovieData();
+    this.comedyMovieData();
+    this.documentaryMovieData();
+    this.scienceFictionMovieData();
+    this.thrillerMovieData();
   }
+
 
   // Banner Data
   bannerData(){
@@ -36,6 +50,57 @@ export class HomeComponent {
       this.trendingMovieResult = result.results;
     });
   }
+  actionMovieData(){
+  this.service.fetchActionMovies().subscribe((result) =>{
+    this.actionMovieResult = result.results;
+  });
+  }
+  adventureMovieData(){
+    this.service.fetchAdventureMovies().subscribe((result) =>{
+      this.adventureMovieResult = result.results;
+    });
+  }
+  // Animation Movies
+  animationMovieData(){
+    this.service.fetchAnimationMovies().subscribe((result)=>{
+      this.animationMovieResult = result.results;
+    });
+  }
+
+  // Comedy Movies
+  comedyMovieData(){
+    this.service.fetchComedyMovies().subscribe((result)=>{
+      this.comedyMovieResult = result.results;
+    });
+  }
+
+  // Documentary Movies
+  documentaryMovieData(){
+    this.service.fetchDocumentaryMovies().subscribe((result)=>{
+      this.documentaryMovieResult = result.results;
+    });
+  }
+
+  // Science-Fiction Movies
+  scienceFictionMovieData(){
+    this.service.fetchScienceFictionMovies().subscribe((result)=>{
+      this.scienceFictionMovieResult = result.results;
+    });
+  }
+
+  // Thriller Movies
+  thrillerMovieData(){
+    this.service.fetchThrillerMovies().subscribe((result)=>{
+      this.thrillerMovieResult = result.results;
+    });
+  }
+
+
+
+    // Adventure Movies
+
+    // Animation Movies
+
 
   }
 

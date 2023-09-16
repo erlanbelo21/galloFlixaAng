@@ -1,3 +1,4 @@
+import { SearchComponent } from './../search/search.component';
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MovieApiService } from 'src/app/services/movie-api.service';
@@ -10,7 +11,7 @@ import { MovieApiService } from 'src/app/services/movie-api.service';
 export class MovieDetailsComponent {
 
   constructor(private service:MovieApiService, private router:ActivatedRoute) { }
-
+  
   movieResult: any;
   movieVideoResult: any;
   movieCastResult: any;
@@ -21,6 +22,7 @@ export class MovieDetailsComponent {
     this.getMovie(id);
     this.getVideo(id);
     this.getCast(id);
+
   }
 
   getMovie(id:any){
@@ -48,4 +50,5 @@ export class MovieDetailsComponent {
       console.log(this.movieCastResult, 'movieVideo#');
     });
   }
+
 }

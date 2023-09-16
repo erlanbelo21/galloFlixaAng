@@ -19,6 +19,7 @@ export class SafePipe implements PipeTransform {
   }
 }
 
+
 @NgModule({
   declarations: [
     AppComponent,
