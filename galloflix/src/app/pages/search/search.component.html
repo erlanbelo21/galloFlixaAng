@@ -7,7 +7,7 @@
             <button class="btn btn-danger" type="submit">Pesquisar</button>
         </div>
     </form>
-</div>
+
 <div class="row mt-5">
     <div class="col-lg-4" *ngFor="let s of searchResult">
         <div id="movie" class="row" routerLink="movie/s.id">
@@ -16,6 +16,7 @@
             </div>
             <div id="details" class="col-lg-9 my-3">
                 <h5>{{s.title}}</h5>
+                </div>  
             </div>
         </div>
     </div>

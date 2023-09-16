@@ -1,3 +1,7 @@
+.navbar{
+	backdrop-filter: blur(2px);
+	background: rgba(0, 0,0, 0,5);
+}
 .navbar .navbar-brand{
 	color: #E50914;
 	font-weight: bold;

@@ -2,22 +2,17 @@
 <div class="container-fluid p-0">
   <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="10000"
-        *ngFor="let b of bannerResult; let i=index" 
+        <div class="carousel-item active" data-bs-interval="10000"*ngFor="let b of 
+        bannerResult; let i=index" 
         [ngClass]="{active:i===0}">
           <img src="https://image.tmdb.org/t/p/original/{{ b.backdrop_path }}" class="d-block w-100"
-          
           alt="{{b.title??b.name}}">
-          
-           <div class="carousel-caption d-none d-md-block">
-           
-            <h2>{{b.title??b.name}}</h2>
-            <p>{{b.overview}}</p>
-          
-          </div>
-     
-      </div>
-  </div>      
+      <div class="carousel-caption d-none d-md-block">
+              <h2>{{b.title??b.name}}</h2>
+             <p>{{b.overview}}</p>
+           </div>
+     </div>
+</div>      
 
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -27,13 +22,10 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Próximo</span>
       </button>
-    </div>
-  
-    
-    
+    </div>   
 </div>
 
-<div class="container mt-3 p-4">
+<div class="container my-5">
 
   <!-- trending movies -->
   <div class="row">
@@ -48,4 +40,5 @@
     </div>
   </div>
 
-</div>
+
+  
